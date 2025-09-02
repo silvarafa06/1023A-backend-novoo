@@ -11,7 +11,7 @@ app.get('/', async (req:Request, res:Response)=> {
         res.status(500).send("Variavel de ambiente DBUSER não está definida")
         return;
     }
-    if (process.env.DBPASSAWORD==undefined){
+    if (process.env.DBPASSWORD==undefined){
         res.status(500).send("Variavel de ambiente DBPASSAWORD não está definida")
         return;
     }
@@ -31,7 +31,7 @@ app.get('/', async (req:Request, res:Response)=> {
         const connection = await mysql.createConnection({
         host: process.env.DBHOST,
         user : process.env.DBUSER,  
-        password:process.env.DBPASSAWORD,
+        password:process.env.DBPASSWORD,
         database:process.env.DBNAME,
         port:Number(process.env.DBPORT)
     })
