@@ -42,6 +42,25 @@ app.get('/', async (req:Request, res:Response)=> {
         res.status(500).send("Erro ao conctar ao banco de dados" + error);
     }
 });
+
+// Criar uma rota get para produtos que retorna uma lista de produtos do banco de dados 
+//O produto deve ter id, nome, urlfoto, preco e descricao
+//Deve-se criar uma tabela no banco de dados AIVEN para amarzenar os produtos
+//A resposta deve ser um array de produtos em formato json
+//Crie o codigo SQL para criar a tabela de produtos
+/*
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    urlfoto VARCHAR(255) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    descricao TEXT
+);
+Faz pelo menos 3 inserções nessa tabela
+*/
+
+
+
 app.listen(8000, () => {
     console.log('Server is running on port 8000');
 });
